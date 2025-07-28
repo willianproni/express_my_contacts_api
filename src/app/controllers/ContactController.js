@@ -49,7 +49,7 @@ class ContactController {
     const contactExists = await ContactsRepository.findById(id);
 
     if (!contactExists) {
-      res.status(404).json({ error: 'User not found' });
+      return res.status(404).json({ error: 'User not found' });
     }
 
     const contactByEmail = await ContactsRepository.findByEmail(email);
