@@ -1,22 +1,4 @@
-const { randomUUID } = require('crypto');
 const db = require('../../database');
-
-let contacts = [
-  {
-    id: randomUUID(),
-    name: 'Willian',
-    email: 'willian@mycontact.com',
-    phone: '11987654356',
-    category_id: randomUUID(),
-  },
-  {
-    id: randomUUID(),
-    name: 'Lorena',
-    email: 'lorena@mycontact.com',
-    phone: '11987658253',
-    category_id: randomUUID(),
-  },
-];
 
 class ContactsRepository {
   async findAll(orderBy = 'ASC') {
@@ -78,11 +60,14 @@ class ContactsRepository {
     return row;
   }
 
-  delete(id) {
-    return new Promise((resolve) => {
-      contacts = contacts.filter((contact) => contact.id !== id);
-      resolve();
-    });
+  async delete(id) {
+    await db.query(
+      `
+      DELETE FROM contacts
+      WHERE id = $1;
+      `,
+      [id]
+    );
   }
 }
 
