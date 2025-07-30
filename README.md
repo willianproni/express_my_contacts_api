@@ -15,14 +15,14 @@ A simple RESTful API for managing contacts, developed with Node.js, Express, and
 
 # Features
 
-## Contact
+### Contact
 - List all contacts.
 - Retrieve a contact by ID.
 - Create a new contact.
 - Update an existing contact.
 - Delete a contact.
 
-## Categories
+### Categories
 - List all categories
 - Create new category
 
