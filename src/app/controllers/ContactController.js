@@ -40,7 +40,7 @@ class ContactController {
       category_id,
     });
 
-    res.json(contact);
+    res.status(201).json(contact);
   }
 
   async update(req, res) {
