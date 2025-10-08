@@ -60,10 +60,6 @@ psql -U {DB_USER} -d mycontacts
 ```
 
 # 💡 Usage
-Mention how to interact with the API, e.g., using Postman, Insomnia, or curl examples. You can add a Routes section here or point to API documentation if you have it.
-
-Example using curl (for listing contacts):
-
 ```
 curl http://localhost:3000/contacts
 ```
